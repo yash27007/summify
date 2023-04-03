@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SUMMIFY</title>
+    
+    <style>
+        
+        h1 {
+            position: fixed;
+            top: 2%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 50px;
+            color: #fff;
+            text-shadow: 2px 2px #333;
+            opacity: 0;
+            animation: fade-in 2s forwards;
+            font-family: 'Montserrat', sans-serif;
+            z-index: 1;
+            padding-bottom: 20px;
+        }
+        
+        body {
+            background-color:#55efc4;
+            background-image :linear-gradient(90deg, #55efc4 0%, #000000 74%);
+            margin: 40px;
+            padding: 100px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #fff;
+            line-height: 1.5;
+        }
+        
+        @keyframes fade-in {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+      
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .dsy {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+        .originaltxt {
+            margin-right: 10px;
+            padding-right: 10px;
+        }
+        .summarytxt {
+            margin-left: 10px;
+            padding-left: 10px;
+        }
+        .original_title, .summary_title {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .keywords {
+            margin-top: 50px;
+           
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+        }
+     
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <h1>SUMMIFY</h1>
+    
+    <div class ="container" style="display: flex;justify-content: space-around;">
+        <p class="original_title col-sm-4">ORIGINAL TEXT</p>
+        <p class="summary_title col-sm-4">SUMMARY</p>
+    </div>
+    
+    <div class="container dsy">
+        <p class="originaltxt col-sm-6">{{original_txt}}</p>
+        <div class="container col-sm-6">
+            <p class="summary">{{summary}}</p>
+        </div>
+    </div>
+    
+    <div class="container" style="display: flex;justify-content: space-around;">
+        <button type="submit">Words: {{len_ori_txt}}</button>
+        <button type="submit">Words: {{len_summary}}</button>
+    </div>
+
+    <div class="keywords">
+        <p>Keywords: {{kwords}}</p>
+    </div>
+    
+  </body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SUMMIFY</title>
+    
+    <style>
+        h1 {
+        position: fixed;
+        top:2%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      font-size: 50px;
+      color: #fdfdfe;
+  text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3,
+    0px 0px 20px #b393d3;
+      opacity: 0;
+      animation: fade-in 2s forwards;
+      font-family: 'Niconne', cursive;
+        z-index: 1;
+        padding-bottom: 20px;
+        
+      }
+      .input-container {
+        padding-top: 100px; /* add padding above the input section */
+      }
+      body {
+        background-color:#55efc4;
+background-image :linear-gradient(90deg, #55efc4 0%, #000000 74%);
+      margin: 10px;
+      padding: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: #fff;
+      line-height: 1.5;
+    }
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+      
+      @keyframes fadeIn {
+        0% { opacity: 0; }
+        100% { opacity: 1; }
+      }
+      
+      form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 50px;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      input[type=text] {
+        width: 80%;
+        height: auto;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: none;
+        border-radius: 4px;
+        border-radius: 10px;
+  background-color: #fff;
+  font-size: 18px;
+  font-family: 'Helvetica Neue', sans-serif;
+      }
+      
+      button[type=submit] {
+        background-color: #000000;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        
+      }
+      
+      button[type=submit]:hover {
+        background-color: #55efc4;
+      }
+      
+      .image-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        
+        margin-top: 150px; /* adjust the margin to create space between the form and images */
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  
+      }
+      
+      .image-container img {
+        max-width: 171px;
+        height: 171px;
+        border-radius: 50%;
+        transition: transform 0.3s ease;
+      }
+      
+      .image-container img:hover {
+        transform: scale(1.2);
+      }
+      .image {
+  position: absolute;
+  bottom: 0;
+}
+      
+      .name {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 20px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+      }
+      
+      .name a {
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+    rel="stylesheet"
+  />
+  </head>
+  <body>
+    <h1>SUMMIFY</h1>
+    
+    <form action="/analyse" method="POST">
+      <label for="input-text">Enter your text:</label>
+      <input type="text" id="rawtext" name="rawtext" required>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="image-container">
+      <div>
+        <img src="{{ url_for('static', filename='photo1.jpg') }}" alt="photo1">
+        <div class="name"><a href="https://www.linkedin.com/in/yashwanth-aravind-68b67025b/"target="_blank">Yashwanth</a></div>
+      </div>
+      <div>
+        <img src="{{ url_for('static', filename='photo2.jpg') }}" alt="photo2">
+        <div class="name"><a href="https://www.linkedin.com/in/tumu-sai-spandana-800603268/"target="_blank">Spandana</a></div>
+      </div>
+      <div>
+        <img src="{{ url_for('static', filename='photo3.jpg') }}" alt="photo3">
+        <div class="name"><a href="https://www.linkedin.com/in/divya-bala-701882268/"target="_blank">Divya Bala</a></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
